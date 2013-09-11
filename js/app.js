@@ -9,3 +9,19 @@ App.IndexRoute = Ember.Route.extend({
     this.transitionTo('links');
   }
 });
+
+App.LinksRoute = Ember.Route.extend({
+  model: function() {
+    return links;
+  }
+});
+
+var links = [{
+  id: '1',
+  link: 'http://www.foo.com',
+  title: 'foo'
+  }, {
+  id: '2',
+  link: 'http://www.bar.com',
+  title: 'bar'
+}];
