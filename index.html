@@ -11,7 +11,7 @@
 
   <script type="text/x-handlebars">
     <div class="row">
-      <div class="twelve columns">
+      <div class="small-12 columns">
         <h1>linklist #channelname</h1>
         <hr>
       </div>
@@ -21,11 +21,14 @@
 
   <script type="text/x-handlebars" id="links">
     <div class="row">
-      <div class="five columns">
-        <h3>links:</h3>
+      <div class="small-5 columns">
+        <h3>links</h3>
         {{#each}}
         {{ title }}<br>
         {{/each}}
+      </div>
+      <div class="panel small-7 columns">
+        <h3>link</h3>
       </div>
     </div>
   </script>
