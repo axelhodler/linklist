@@ -1,7 +1,9 @@
 App = Ember.Application.create();
 
 App.Router.map(function() {
-  this.resource('links');
+  this.resource('links', function() {
+    this.resource('link', { path: ':link_id' });
+  });
 });
 
 App.IndexRoute = Ember.Route.extend({
