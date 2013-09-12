@@ -28,13 +28,17 @@
         {{/each}}
       </div>
       <div class="panel small-7 columns">
-        <h3>link</h3>
           {{ outlet }}
       </div>
     </div>
   </script>
 
+  <script type="text/x-handlebars" id="links/index">
+    <h4>Select a title to the left to get more info</h4>
+  </script>
+
   <script type="text/x-handlebars" id="link">
+    <h4>{{ title }}</h4>
     <h4>{{ url }}</h4>
   </script>
 
