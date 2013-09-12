@@ -18,12 +18,18 @@ App.LinksRoute = Ember.Route.extend({
   }
 });
 
+App.LinkRoute = Ember.Route.extend({
+  model: function(params) {
+    return links.findBy('id', params.link_id);
+  }
+});
+
 var links = [{
   id: '1',
-  link: 'http://www.foo.com',
+  url: 'http://www.foo.com',
   title: 'foo'
   }, {
   id: '2',
-  link: 'http://www.bar.com',
+  url: 'http://www.bar.com',
   title: 'bar'
 }];
