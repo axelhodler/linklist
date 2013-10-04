@@ -1,30 +1,30 @@
 App = Ember.Application.create();
 
 App.Router.map(function() {
-  this.resource('links', function() {
-    this.resource('link', { path: ':link_id' });
+  this.resource('urls', function() {
+    this.resource('url', { path: ':url_id' });
   });
 });
 
 App.IndexRoute = Ember.Route.extend({
   redirect: function() {
-    this.transitionTo('links');
+    this.transitionTo('urls');
   }
 });
 
-App.LinksRoute = Ember.Route.extend({
+App.UrlsRoute = Ember.Route.extend({
   model: function() {
-    return links;
+    return urls;
   }
 });
 
-App.LinkRoute = Ember.Route.extend({
+App.UrlRoute = Ember.Route.extend({
   model: function(params) {
-    return links.findBy('id', params.link_id);
+    return urls.findBy('id', params.url_id);
   }
 });
 
-var links = [{
+var urls = [{
   id: '1',
   url: 'http://www.foo.com',
   title: 'foo'
