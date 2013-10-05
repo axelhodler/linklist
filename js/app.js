@@ -14,22 +14,25 @@ App.IndexRoute = Ember.Route.extend({
 
 App.UrlsRoute = Ember.Route.extend({
   model: function() {
-    return urls;
+    return this.store.find('url');
   }
 });
 
 App.UrlRoute = Ember.Route.extend({
   model: function(params) {
-    return urls.findBy('id', params.url_id);
+    return this.store.find('id', params.url_id);
   }
 });
 
-var urls = [{
-  id: '1',
-  url: 'http://www.foo.com',
-  title: 'foo'
-  }, {
-  id: '2',
-  url: 'http://www.bar.com',
-  title: 'bar'
-}];
+App.Url = DS.Model.extend({
+   title: DS.attr('string'),
+   _id: DS.attr('string'),
+   url: DS.attr('string'),
+   user: DS.attr('string')
+});
+
+App.ApplicationAdapter = DS.RESTAdapter.extend({
+  host: 'http://localhost:4567'
+});
+
+var urls = App.Url.find();
