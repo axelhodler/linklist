@@ -20,7 +20,7 @@ App.UrlsRoute = Ember.Route.extend({
 
 App.UrlRoute = Ember.Route.extend({
   model: function(params) {
-    return this.store.find('_id', params.url_id);
+    return this.store.find('url', params.url_id);
   }
 });
 
