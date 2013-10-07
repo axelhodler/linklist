@@ -20,7 +20,7 @@ App.UrlsRoute = Ember.Route.extend({
 
 App.UrlRoute = Ember.Route.extend({
   model: function(params) {
-    return this.store.find('id', params.url_id);
+    return this.store.find('_id', params.url_id);
   }
 });
 
@@ -33,6 +33,10 @@ App.Url = DS.Model.extend({
 
 App.ApplicationAdapter = DS.RESTAdapter.extend({
   host: 'http://localhost:4567'
+});
+
+App.ApplicationSerializer = DS.RESTSerializer.extend({
+  primaryKey: "_id"
 });
 
 var urls = App.Url.find();
