@@ -38,5 +38,3 @@ App.ApplicationAdapter = DS.RESTAdapter.extend({
 App.ApplicationSerializer = DS.RESTSerializer.extend({
   primaryKey: "_id"
 });
-
-var urls = App.Url.find();
