@@ -25,7 +25,10 @@
       <div class="small-5 columns">
         <h3>links</h3>
         {{#each}}
-        {{#linkTo 'url' this }}{{ title }}{{/linkTo}}<br>
+        {{#linkTo 'url' this }}
+          {{ title }}
+        {{/linkTo}}
+        {{ format-date timestamp }}<br>
         {{/each}}
       </div>
       <div class="panel small-7 columns">
