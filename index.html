@@ -42,8 +42,10 @@
   </script>
 
   <script type="text/x-handlebars" id="url">
-    <h4>{{ title }}</h4>
-    <h4>{{ url }}</h4>
+    <h4>{{ this.title }}</h4>
+    <h4><a {{ bindAttr href="url"}}>{{ url }}</a></h4>
+    <h4>{{ user }}</h4>
+    <h4>{{ timestamp }}</h4>
   </script>
 
   <script src="js/libs/jquery-1.9.1.js"></script>
