@@ -39,3 +39,7 @@ App.ApplicationAdapter = DS.RESTAdapter.extend({
 App.ApplicationSerializer = DS.RESTSerializer.extend({
   primaryKey: "_id"
 });
+
+Ember.Handlebars.registerBoundHelper('format-date', function(date) {
+  return moment(date).fromNow();
+});
