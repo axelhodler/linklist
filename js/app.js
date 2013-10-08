@@ -25,10 +25,11 @@ App.UrlRoute = Ember.Route.extend({
 });
 
 App.Url = DS.Model.extend({
-   title: DS.attr('string'),
-   _id: DS.attr('string'),
-   url: DS.attr('string'),
-   user: DS.attr('string')
+  title: DS.attr('string'),
+  _id: DS.attr('string'),
+  url: DS.attr('string'),
+  user: DS.attr('string'),
+  timestamp: DS.attr('string')
 });
 
 App.ApplicationAdapter = DS.RESTAdapter.extend({
