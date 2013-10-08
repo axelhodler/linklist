@@ -20,12 +20,12 @@
     {{ outlet }}
   </script>
 
-  <script type="text/x-handlebars" id="urls">
+  <script type="text/x-handlebars" id="links">
     <div class="row">
       <div class="small-5 columns">
         <h3>links</h3>
         {{#each}}
-        {{#linkTo 'url' this }}
+        {{#linkTo 'link' this }}
           {{ title }}
         {{/linkTo}}
         {{ format-date timestamp }}<br>
@@ -37,11 +37,11 @@
     </div>
   </script>
 
-  <script type="text/x-handlebars" id="urls/index">
+  <script type="text/x-handlebars" id="links/index">
     <h4><i class="foundicon-left-arrow"></i> Select a title to the left to get more info</h4>
   </script>
 
-  <script type="text/x-handlebars" id="url">
+  <script type="text/x-handlebars" id="link">
     <h4>{{ this.title }}</h4>
     <h4><a {{ bindAttr href="url"}}>{{ url }}</a></h4>
     <h4>{{ user }}</h4>
