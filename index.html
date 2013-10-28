@@ -5,34 +5,56 @@
 <title>linklist #channelname</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/foundation.css">
   <link rel="stylesheet" href="css/general_foundicons.css">
+  <style>
+    body {
+    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
+  </style>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
 
-  <script type="text/x-handlebars">
-    <div class="row">
-      <div class="small-12 columns">
-        <h1>linklist #channelname</h1>
-        <hr>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="#">Project name</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
-    {{ outlet }}
+  </div>
+
+  <script type="text/x-handlebars">
+    <div class="container">
+      <h1>linklist #channelname</h1>
+      <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+      <hr>
+      <p> {{ outlet }} <p>
+    </div>
   </script>
 
   <script type="text/x-handlebars" id="links">
-    <div class="row">
-      <div class="small-5 columns">
-        <h3>links</h3>
-        {{#each}}
-        {{#linkTo 'link' this }}
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span4">
+          <h3>links</h3>
+          {{#each}}
+          {{#linkTo 'link' this }}
           {{ title }}
-        {{/linkTo}}
-        {{ format-date timestamp }}<br>
-        {{/each}}
-      </div>
-      <div class="panel small-7 columns">
+          {{/linkTo}}
+          {{ format-date timestamp }}<br>
+          {{/each}}
+        </div>
+        <div class="span8">
           {{ outlet }}
+        </div>
       </div>
     </div>
   </script>
@@ -52,6 +74,7 @@
   <script src="js/libs/handlebars-1.0.0.js"></script>
   <script src="js/libs/ember-1.0.0.js"></script>
   <script src="js/libs/ember-data.js"></script>
+  <script src="js/libs/bootstrap.min.js"></script>
   <script src="js/libs/moment.min.js"></script>
   <script src="js/app.js"></script>
 
