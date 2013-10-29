@@ -30,7 +30,7 @@
 
     <script type="text/x-handlebars">
       <div class="container">
-        <h1>linklist #channelname</h1>
+        <h1>#channelname</h1>
         <p> {{ outlet }} <p>
       </div>
     </script>
@@ -44,15 +44,13 @@
             </div>
             <table class="table">
               <tr>
-                <th>Title</th>
                 <th>Posted</th>
+                <th>Title</th>
               </tr>
               {{#each}}
               <tr>
-                <td>{{#linkTo 'link' this }}
-                  {{ title }}
-                  {{/linkTo}}</td>
-                <td>{{ group-dates timestamp }} </td>
+                <td>{{ group-dates timestamp }}</td>
+                <td>{{#linkTo 'link' this }} {{ title }} {{/linkTo}}</td>
               </tr>
               {{/each}}
             </table>
