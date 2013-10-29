@@ -45,6 +45,19 @@ App.ApplicationSerializer = DS.RESTSerializer.extend({
   primaryKey: "_id"
 });
 
-Ember.Handlebars.registerBoundHelper('format-date', function(date) {
-  return moment(date).fromNow();
+var lastDate;
+
+function formatDate(date) {
+  return moment(date).format('ll');
+};
+
+Ember.Handlebars.registerBoundHelper('group-dates', function(currentDate) {
+  dateToCompare = formatDate(currentDate);
+
+  if (lastDate != dateToCompare) {
+    lastDate = dateToCompare;
+    return lastDate;
+  } else {
+    return "";
+  }
 });
