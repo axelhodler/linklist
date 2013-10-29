@@ -18,6 +18,11 @@ App.LinksRoute = Ember.Route.extend({
   }
 });
 
+App.LinksController = Ember.ArrayController.extend({
+  sortProperties: ['timestamp'],
+  sortAscending: true
+});
+
 App.LinkRoute = Ember.Route.extend({
   model: function(params) {
     return this.store.find('link', params.link_id);
