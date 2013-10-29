@@ -31,8 +31,6 @@
     <script type="text/x-handlebars">
       <div class="container">
         <h1>linklist #channelname</h1>
-        <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
-        <hr>
         <p> {{ outlet }} <p>
       </div>
     </script>
@@ -40,28 +38,31 @@
     <script type="text/x-handlebars" id="links">
       <div class="row">
         <div class="col-md-4">
-          <h3>links</h3>
-          <table class="table">
-            <tr>
-              <th>Title</th>
-              <th>Posted</th>
-            </tr>
-            {{#each}}
-            <tr>
-              <td>{{#linkTo 'link' this }}
-                {{ title }}
-                {{/linkTo}}</td>
-              <td>{{ format-date timestamp }}</td>
-            </tr>
-            {{/each}}
-          </table>
-        </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">links</h3>
+            </div>
+            <table class="table">
+              <tr>
+                <th>Title</th>
+                <th>Posted</th>
+              </tr>
+              {{#each}}
+              <tr>
+                <td>{{#linkTo 'link' this }}
+                  {{ title }}
+                  {{/linkTo}}</td>
+                <td>{{ format-date timestamp }}</td>
+              </tr>
+              {{/each}}
+            </table>
+          </div>
+          </div>
         <div class="col-md-8">
           {{ outlet }}
         </div>
       </div>
-</div>
-</script>
+    </script>
 
 <script type="text/x-handlebars" id="links/index">
   <div class="panel panel-default">
