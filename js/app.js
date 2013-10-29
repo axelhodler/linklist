@@ -56,8 +56,8 @@ Ember.Handlebars.registerBoundHelper('group-dates', function(currentDate) {
 
   if (lastDate != dateToCompare) {
     lastDate = dateToCompare;
-    return lastDate;
+    return lastDate + ":";
   } else {
-    return "";
+    return " * ";
   }
 });
